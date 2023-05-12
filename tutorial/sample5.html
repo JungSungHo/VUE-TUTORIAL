@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.jsのサンプル</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <style>
+    .blue {
+      color: blue
+    }
+
+    .red {
+      color: red
+    }
+  </style>
+
+  <div id="app1">
+    <p class="{{ class1 }}">{{ class1 }}です。</p>
+    <p v-bind:class="class1">{{ class1 }}です。</p>
+  </div>
+
+  <script>
+    const App1 = {
+      data() {
+        return {
+          class1: "blue"
+        }
+      }
+    }
+
+    app1 = Vue.createApp(App1)
+    app1.mount("#app1")
+  </script>
+</body>
+</html>
